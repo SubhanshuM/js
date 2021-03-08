@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Event Capturing</title>
+    <style media="screen">
+      #parent{
+      background-color:yellow;
+      height:600px;
+      }
+      #child{
+        background-color:green;
+        height:200px;
+      }
+      #other{
+        background-color:pink;
+        height:200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="parent">
+        <div id="child">
+        Child
+        </div>
+        <div id="other">
+          Other
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+      document.getElementById("parent").addEventListener("click",function(event){
+        console.log("parent clicked");
+      },true);
+      document.getElementById("child").addEventListener("click",function(event){
+        console.log("child clicked");
+      },true);
+  </script>
+</html>
